@@ -4,12 +4,12 @@
       v-if="article.image"
       id="banner"
       class="uk-height-small uk-flex uk-flex-center uk-flex-middle uk-background-cover uk-light uk-padding"
-      :data-src="api_url + article.image.url"
+      :data-src="article.image.url"
       uk-img
     >
       <h1>{{ article.title }}</h1>
     </div>
-
+hhhhh
     <div class="uk-section">
       <div class="uk-container uk-container-small">
         <div
