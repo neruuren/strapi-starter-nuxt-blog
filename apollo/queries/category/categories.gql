@@ -1,6 +1,19 @@
 query Categories {
   categories {
     id
-    name
+    title
+    subtitle
+    image {
+      url
+    }
+    articles {
+      title
+      subtitle
+      content
+      icon_class
+      image {
+        url
+      }
+    }
   }
 }

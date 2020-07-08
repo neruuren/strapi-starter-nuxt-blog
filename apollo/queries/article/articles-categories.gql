@@ -10,7 +10,7 @@ query Category($id: ID!){
       }
       category {
         id
-        name
+        title
       }
     }
   }

@@ -2,12 +2,14 @@ query Articles {
   articles {
     id
     title
+    subtitle
     content
+    icon_class
     image {
       url
     }
     category{
-      name
+      title
     }
   }
 }

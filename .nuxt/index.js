@@ -11,8 +11,8 @@ import { setContext, getLocation, getRouteData, normalizeError } from './utils'
 
 /* Plugins */
 
-import nuxt_plugin_markdownit_328d7430 from 'nuxt_plugin_markdownit_328d7430' // Source: ./markdown-it.js (mode: 'all')
-import nuxt_plugin_apollomodule_e0b134a2 from 'nuxt_plugin_apollomodule_e0b134a2' // Source: ./apollo-module.js (mode: 'all')
+import nuxt_plugin_markdownit_0aec12d2 from 'nuxt_plugin_markdownit_0aec12d2' // Source: ./markdown-it.js (mode: 'all')
+import nuxt_plugin_apollomodule_4a8cea56 from 'nuxt_plugin_apollomodule_4a8cea56' // Source: ./apollo-module.js (mode: 'all')
 import nuxt_plugin_uikit_47fa8f2a from 'nuxt_plugin_uikit_47fa8f2a' // Source: ../plugins/uikit.js (mode: 'client')
 
 // Component: <ClientOnly>
@@ -147,12 +147,12 @@ async function createApp (ssrContext) {
 
   // Plugin execution
 
-  if (typeof nuxt_plugin_markdownit_328d7430 === 'function') {
-    await nuxt_plugin_markdownit_328d7430(app.context, inject)
+  if (typeof nuxt_plugin_markdownit_0aec12d2 === 'function') {
+    await nuxt_plugin_markdownit_0aec12d2(app.context, inject)
   }
 
-  if (typeof nuxt_plugin_apollomodule_e0b134a2 === 'function') {
-    await nuxt_plugin_apollomodule_e0b134a2(app.context, inject)
+  if (typeof nuxt_plugin_apollomodule_4a8cea56 === 'function') {
+    await nuxt_plugin_apollomodule_4a8cea56(app.context, inject)
   }
 
   if (process.client && typeof nuxt_plugin_uikit_47fa8f2a === 'function') {

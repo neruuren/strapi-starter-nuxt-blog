@@ -28,7 +28,7 @@ export default (ctx, inject) => {
       let defaultClientConfig
 
         defaultClientConfig = {
-  "httpEndpoint": "http://localhost:1337/graphql"
+  "httpEndpoint": "https://gregory-day.herokuapp.com/graphql"
 }
 
       if (process.server) {

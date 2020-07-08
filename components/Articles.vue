@@ -9,7 +9,9 @@
           :key="article.id"
         >
           <div class="uk-card uk-card-muted">
-            <div class="uk-card-media-top">
+            <div
+              v-if="article.image"
+              class="uk-card-media-top">
               <img :src="api_url + article.image.url" alt="" height="100" />
             </div>
             <div class="uk-card-body">
@@ -34,8 +36,10 @@
             :key="article.id"
           >
             <div class="uk-card uk-card-muted">
-              <div class="uk-card-media-top">
-                <img :src="api_url + article.image.url" alt="" height="100" />
+              <div
+                v-if="article.image"
+                class="uk-card-media-top">
+                <img :src="article.image.url" alt="" height="100" />
               </div>
               <div class="uk-card-body">
                 <p

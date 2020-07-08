@@ -4,7 +4,7 @@
       v-if="article.image"
       id="banner"
       class="uk-height-small uk-flex uk-flex-center uk-flex-middle uk-background-cover uk-light uk-padding"
-      :data-src="article.image.url"
+      :data-src="article.image"
       uk-img
     >
       <h1>{{ article.title }}</h1>
@@ -17,8 +17,8 @@ hhhhh
           id="editor"
           v-html="$md.render(article.content)"
         ></div>
-        <p v-if="article.published_at">
-          {{ moment(article.published_at).format("MMM Do YY") }}
+        <p v-if="article.created_at">
+          {{ moment(article.created_at).format("MMM Do YY") }}
         </p>
       </div>
     </div>
