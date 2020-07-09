@@ -88,7 +88,20 @@ body {
 .thumbnail {
 	border: 0;
 	height: 150px;
+	display: block;
+	padding-top: 4px;
+	padding-bottom: 4px;
+	margin-bottom: 0px;
 }
+
+.thumbnail .caption {
+	padding: 9px;
+	color: #fff;
+  }
+
+  .thumbnail .captiontextonwhite {
+	color: #000;
+  }
 
 .rubrique3 {
 	/*background-image: url("../img/code2.jpeg");*/
@@ -122,8 +135,14 @@ body {
 	
 }
 
+.rubrique2 .thumbnail {
+
+	padding-bottom: 200px;
+}
+
+
 .rubrique3 .thumbnail {
-	padding-bottom: 50px;
+	padding-bottom: 200px;
 	padding-top: 20px;
 }
 
@@ -132,7 +151,7 @@ body {
 	
 }
 
-.quiEspace, .quiEspacet {
+.quiEspace, .quiEspaceImage {
 	height: 200px;
 	
 }
@@ -146,7 +165,7 @@ body {
 	color: #000;
 }
 
-.quiEspacet h2 {
+.quiEspaceImage, .quiEspaceImage h2 {
 	color: #fff;
 }
 

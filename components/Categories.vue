@@ -58,25 +58,47 @@
         :style="`backgroundImage: url('${category.image[0] ? category.image[0].url : ''}')`"
     >
         <div class="row">
-            <div class="col-md-12 quiEspace text-uppercase">
+            <div :class="`col-md-12 ${category.image[0] ? 'quiEspaceImage' : 'quiEspace'} text-uppercase`">
                 <h2>{{ category.title }}</h2>      
                 <p>{{ category.subtitle }}</p> 
                 <p><b>______</b></p> 
             </div>
-            <div 
-                class="col-md-4"
-                v-for="article in category.articles"
-                :key="article.id"
-            >
-                <div class="thumbnail">
-                    <i v-bind:class="`${article.icon_class}`" style="font-size:4em"></i>
-                    <div class="caption">
-                        <h3>{{ article.title }}</h3>
-                        <p>{{ article.subtitle }}</p>
-                        <p>{{ article.content }}</p>
+            <div v-if="category.id == 4 || category.id == 6">
+                <div 
+                    class="col-xs-offset-1 col-xs-10 col-sm-offset-2 col-sm-8 col-md-offset-2 col-md-8"
+                    v-for="article in category.articles.reverse()"
+                    :key="article.id"
+                >
+                    <div class="media">
+                        <div class="media-left">
+                            <img :src="`${article.image ? article.image.url : ''}`" alt="" class="img-responsive"/>
+                        </div>
+                        <div class="media-body text-left">
+							<h4 class="media-heading">{{ article.title }}</h4>
+							<p>{{ article.subtitle }}</p>
+							<p>{{ article.content }}</p>
+                        </div>
+                    </div>
+                    <div class="col-xs-1 col-sm-2 col-md-2"></div>
+				    <div class="col-xs-12 col-sm-12 col-md-12 quiEspace2"></div>
+                </div>
+            </div>		
+            <div v-else>
+                <div 
+                    class="col-md-4"
+                    v-for="article in category.articles"
+                    :key="article.id"
+                >
+                    <div class="thumbnail">
+                        <i v-bind:class="`${article.icon_class}`" style="font-size:4em"></i>
+                        <div :class="`${!category.image[0] ? 'captiontextonwhite' : 'caption'}`">
+                            <h3>{{ article.title }}</h3>
+                            <p>{{ article.subtitle }}</p>
+                            <p>{{ article.content }}</p>
+                        </div>
                     </div>
                 </div>
-            </div>					
+            </div>			
         </div>
     </div>
 
@@ -107,7 +129,7 @@
         <div class="copyright">
             <div class="container">
                 <div class="row">
-                    <div class="col-sm-6">
+                    <div class="text-center">
                         <p>Grégory Day 2020</p>
                     </div>
                     <div class="col-sm-6"></div>

@@ -13,13 +13,13 @@ import '../node_modules/uikit/dist/css/uikit.min.css'
 
 import '../node_modules/uikit/dist/css/uikit.css'
 
-import '../assets/css/main.css'
-
 import '../assets/css/bootstrap.min.css'
 
 import '../assets/css/font-awesome.min.css'
 
 import '../assets/mfizz/font-mfizz.css'
+
+import '../assets/css/main.css'
 
 import _6f6c098b from './layouts/default.vue'
 

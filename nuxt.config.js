@@ -34,10 +34,10 @@ export default {
   css: [
     "uikit/dist/css/uikit.min.css",
     "uikit/dist/css/uikit.css",
-    "@assets/css/main.css",
     "@assets/css/bootstrap.min.css",
     "@assets/css/font-awesome.min.css",
-    "@assets/mfizz/font-mfizz.css"
+    "@assets/mfizz/font-mfizz.css",
+    "@assets/css/main.css"
   ],
   /*
    ** Plugins to load before mounting the App
