@@ -39,7 +39,7 @@
                 <figure class="col-md-offset-5 col-md-2 col-sm-offset-5 col-sm-2 col-xs-offset-4 col-xs-4">
                     <img :src="indexCvCategory.articles[0].image.url" alt="" class="img-responsive"/>
                 </figure>
-                <h1 class="col-md-offset-3 col-md-6 col-sm-offset-2 col-sm-8 col-xs-12">{{ indexCvCategory.articles[0].title }}</h1>   {{ countCategories }}   
+                <h1 class="col-md-offset-3 col-md-6 col-sm-offset-2 col-sm-8 col-xs-12">{{ indexCvCategory.articles[0].title }}</h1> 
                 <p class="col-md-offset-4 col-md-4 col-sm-offset-3 col-sm-6 col-xs-12">{{ indexCvCategory.articles[0].subtitle }},<br>{{ indexCvCategory.articles[0].content }}</p> 
             </div>
             <div class="col-xs-1 hidden-sm hidden-md hidden-lg"></div>
