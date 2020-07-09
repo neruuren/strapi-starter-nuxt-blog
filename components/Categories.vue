@@ -76,7 +76,7 @@
                         <div class="media-body text-left">
 							<h4 class="media-heading">{{ article.title }}</h4>
 							<p>{{ article.subtitle }}</p>
-							<p>{{ article.content }}</p>
+							<div v-html="article.content"></div>
                         </div>
                     </div>
                     <div class="col-xs-1 col-sm-2 col-md-2"></div>
