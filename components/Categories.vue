@@ -39,7 +39,7 @@
                 <figure class="col-md-offset-5 col-md-2 col-sm-offset-5 col-sm-2 col-xs-offset-4 col-xs-4">
                     <img :src="indexCvCategory.articles[0].image.url" alt="" class="img-responsive"/>
                 </figure>
-                <h1 class="col-md-offset-3 col-md-6 col-sm-offset-2 col-sm-8 col-xs-12">{{ indexCvCategory.articles[0].title }}</h1>      
+                <h1 class="col-md-offset-3 col-md-6 col-sm-offset-2 col-sm-8 col-xs-12">{{ indexCvCategory.articles[0].title }}</h1>   {{ countCategories }}   
                 <p class="col-md-offset-4 col-md-4 col-sm-offset-3 col-sm-6 col-xs-12">{{ indexCvCategory.articles[0].subtitle }},<br>{{ indexCvCategory.articles[0].content }}</p> 
             </div>
             <div class="col-xs-1 hidden-sm hidden-md hidden-lg"></div>
@@ -111,14 +111,14 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-12">
-                    <p><a :href="`mailto:${footerCvCategory.articles[0].subtitle}`">{{ footerCvCategory.articles[0].subtitle }}</a></p>
+                    <p><a :href="`mailto:${footerCvCategory.articles[0] ? footerCvCategory.articles[0].subtitle : ''}`">{{ footerCvCategory.articles[0] ? footerCvCategory.articles[0].subtitle : '' }}</a></p>
                 </div>
                 <div class="col-sm-12">
                     <div class="about">
                         <div class="social-media">
                             <ul class="list-inline">
-                                <li><a :href="`${footerCvCategory.articles[1].subtitle}`" target="_blank" title=""><i v-bind:class="`${footerCvCategory.articles[1].icon_class}`"></i></a></li>
-                                <li><a :href="`${footerCvCategory.articles[2].subtitle}`" target="_blank" title=""><i v-bind:class="`${footerCvCategory.articles[2].icon_class}`"></i></a></li>
+                                <li><a :href="`${footerCvCategory.articles[1] ? footerCvCategory.articles[1].subtitle : ''}`" target="_blank" title=""><i v-bind:class="`${footerCvCategory.articles[1] ? footerCvCategory.articles[1].icon_class : ''}`"></i></a></li>
+                                <li><a :href="`${footerCvCategory.articles[2] ? footerCvCategory.articles[2].subtitle : ''}`" target="_blank" title=""><i v-bind:class="`${footerCvCategory.articles[2] ? footerCvCategory.articles[2].icon_class : ''}`"></i></a></li>
                             </ul>
                         </div>
                     </div>
@@ -153,14 +153,23 @@ export default {
     categories: Array
   },
   computed: {
+    countCategories() {
+        return this.categories.length;
+    },
     indexCvCategory() {
-        return this.categories.slice(0, 1)[0];
+        return this.categories.sort(function (a, b) {
+            return a.id - b.id;
+        }).slice(0, 1)[0];
     },
     footerCvCategory() {
-        return this.categories.slice(this.categories.length -1, this.categories.length)[0];
+        return this.categories.sort(function (a, b) {
+            return a.id - b.id;
+        }).slice(this.categories.length -1, this.categories.length)[0];
     },
     cvCategories() {
-        return this.categories.slice(1, this.categories.length -1)
+        return this.categories.sort(function (a, b) {
+            return a.id - b.id;
+        }).slice(1, this.categories.length -1)
     }
   }
 };
