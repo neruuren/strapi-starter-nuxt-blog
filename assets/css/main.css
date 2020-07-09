@@ -146,6 +146,10 @@ body {
 	padding-top: 20px;
 }
 
+.rubrique3 .thumbnail .img-responsive {
+	height: 60px;
+}
+
 .container2 p {
 	color: #000;
 	

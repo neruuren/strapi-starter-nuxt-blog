@@ -66,7 +66,7 @@
             <div v-if="category.id == 4 || category.id == 6">
                 <div 
                     class="col-xs-offset-1 col-xs-10 col-sm-offset-2 col-sm-8 col-md-offset-2 col-md-8"
-                    v-for="article in category.articles.reverse()"
+                    v-for="article in category.articles.slice().reverse()"
                     :key="article.id"
                 >
                     <div class="media">
@@ -90,7 +90,19 @@
                     :key="article.id"
                 >
                     <div class="thumbnail">
-                        <i v-bind:class="`${article.icon_class}`" style="font-size:4em"></i>
+                        <i 
+                            v-bind:class="`${article.icon_class}`" 
+                            style="font-size:4em"
+                            class="img-responsive"
+                            v-if="article.icon_class"
+                        
+                        ></i>
+                        <img 
+                            :src="`${article.image ? article.image.url : ''}`" 
+                            alt="" 
+                            class="img-responsive"
+                            v-else
+                        />
                         <div :class="`${!category.image[0] ? 'captiontextonwhite' : 'caption'}`">
                             <h3>{{ article.title }}</h3>
                             <p>{{ article.subtitle }}</p>
