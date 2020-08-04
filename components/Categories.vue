@@ -169,17 +169,17 @@ export default {
         return this.categories.length;
     },
     indexCvCategory() {
-        return this.categories.sort(function (a, b) {
+        return this.categories.slice().sort(function (a, b) {
             return a.id - b.id;
         }).slice(0, 1)[0];
     },
     footerCvCategory() {
-        return this.categories.sort(function (a, b) {
+        return this.categories.slice().sort(function (a, b) {
             return a.id - b.id;
         }).slice(this.categories.length -1, this.categories.length)[0];
     },
     cvCategories() {
-        return this.categories.sort(function (a, b) {
+        return this.categories.slice().sort(function (a, b) {
             return a.id - b.id;
         }).slice(1, this.categories.length -1)
     }

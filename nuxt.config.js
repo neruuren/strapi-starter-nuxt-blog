@@ -35,7 +35,6 @@ export default {
     "uikit/dist/css/uikit.min.css",
     "uikit/dist/css/uikit.css",
     "@assets/css/bootstrap.min.css",
-    "@assets/css/font-awesome.min.css",
     "@assets/mfizz/font-mfizz.css",
     "@assets/css/main.css"
   ],
